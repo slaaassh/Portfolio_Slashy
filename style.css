@@ -1,0 +1,391 @@
+* {
+  color: #ffffff;
+  cursor: crosshair;
+  scroll-behavior: smooth;
+
+}
+
+@font-face {
+  font-family: 'RegestoGrotesk';
+  src: url('fonts/RegestoGrotesk-Medium.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'RegestoGrotesk', sans-serif;
+}
+
+body {
+    /* overflow: hidden; */
+    z-index: 0;
+    background-color: #000000;
+}
+
+.long-text{
+  color: #7a7a7a;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0;
+}
+
+
+.spacer {
+  height: 100vh;
+}
+
+.nav-sidebar{
+  position: sticky;
+  height: max-content;
+  top: 0;
+  mix-blend-mode: difference;
+   font-size: 14px;
+}
+
+.sidebar {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #000000;
+  position: sticky;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  top: 0;
+   font-size: 14px;
+   
+}
+
+.sidebar > p{
+  text-indent: 0em;
+  margin: 0;
+  overflow: visible;
+  z-index: 0;
+  line-height: 1.0;
+   font-size: 14px;
+     text-align:left;
+     hyphens: none;
+
+   
+}
+
+.info-sidebar > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  
+  
+}
+
+.logo-circle {
+  width: 100%;
+  background-position: top center;
+  aspect-ratio: 1 / 1;
+  margin: 40px 0 40px 0;
+  z-index: 0;
+  top: 0px;
+  left: 0px;
+  position: sticky;
+  background-image: url("/src/shockpazzesco-27.svg");
+  background-color: #00000000;
+  mix-blend-mode: difference;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.hello-main{
+  z-index: -1;
+}
+
+.main-content {
+  text-align: justify;
+  height: 100vh;
+  z-index: 1;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+   font-size: 14px;
+   
+}
+
+.top-nav {
+  background: rgba(255, 255, 255, 0);
+  align-items: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+    mix-blend-mode: difference;
+
+}
+  .project-section {
+    margin-bottom: 20px;
+  }
+
+.project-thumbnails {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.scroll-thumbnails {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scroll-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-thumbnails:active {
+  cursor: grabbing;
+}
+
+.thumbnail {
+  width: 25px;
+  height: 25px;
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: #ffffff;
+}
+
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0px;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.3s ease;
+  touch-action: pan-x;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 500px;
+  background-size:cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.nav-btn:hover {
+  background: white;
+}
+
+.project-info h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.project-type {
+  width: max-content;
+}
+
+
+
+.project-description {
+  line-height: 1.0;
+  hyphens: auto;
+    font-size: 14px;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+  color: #7a7a7a;
+  text-align: justify;
+  
+}
+
+.image-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.image-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-image {
+  flex: 0 0 auto;
+  height: 400px;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-scroll-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 1rem;
+}
+
+.image-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-image {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  max-height: 300px;
+  border-radius: 0.5rem;
+  cursor: grab;
+  user-select: none;
+}
+
+.image-scroll-container.dragging {
+  cursor: grabbing;
+}
+
+
+
+.arrow-down-right {
+  width: 24px;
+  height: 24px;
+  background-image: url('/src/arrow-down-right.svg');
+  background-size: contain;
+}
+
+.arrow-left {
+  width: 18px;
+  height: 18px;
+  background-image: url('/src/arrow-left.svg');
+  background-size: contain;
+}
+
+.arrow-right {
+  width: 18px;
+  height: 18px;
+  background-image: url('/src/arrow-right.svg');
+  background-size: contain;
+}
+
+.arrow-top-right {
+  width: 24px;
+  height: 24px;
+  background-image: url('/src/arrow-top.svg');
+  background-size: contain;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    color: #ffffff;
+    cursor: crosshair;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-sidebar > div {
+    order: 1;
+  }
+  .nav-sidebar > a {
+    order: 0;
+  }
+
+  .nav-sidebar {
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* width: 91%; */
+  }
+
+  .logo-circle {
+    margin: 10vh 0 20px 0;
+  }
+
+  .top-nav{
+    display: none;
+    position: fixed;
+    /* width: 91%; */
+    top: 8vw;
+    left: 0;
+    width: 100%;
+    /* transform: translateX(5%); */
+  }
+  
+  .sidebar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+    height: auto;
+  }
+  
+  .main-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: auto;
+  }
+  
+  .project-section {
+    padding: 20px 0;
+    min-height: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scroll-image {
+    height: 250px;
+  }
+  
+  .carousel-slide {
+    height: 250px;
+  }
+  
+  .project-thumbnails {
+    flex-wrap: wrap;
+  }
+  
+  .thumbnail {
+    width: 30px;
+    height: 30px;
+  }
+}
+  
