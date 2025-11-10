@@ -58,6 +58,21 @@ a {
    
 }
 
+.sidebar-right{
+}
+
+.box-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box{
+  background-color: red;
+  width: 10vw;
+  height: 200px;
+}
+
 .sidebar > p{
   text-indent: 0em;
   margin: 0;
