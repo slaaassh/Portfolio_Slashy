@@ -17,12 +17,12 @@ body {
 }
 
 body {
-    /* overflow: hidden; */
-    z-index: 0;
-    background-color: #000000;
+  /* overflow: hidden; */
+  z-index: 0;
+  background-color: #000000;
 }
 
-.long-text{
+.long-text {
   color: #7a7a7a;
 }
 
@@ -37,12 +37,12 @@ a {
   height: 100vh;
 }
 
-.nav-sidebar{
+.nav-sidebar {
   position: sticky;
   height: max-content;
   top: 0;
   mix-blend-mode: difference;
-   font-size: 14px;
+  font-size: 14px;
 }
 
 .sidebar {
@@ -54,45 +54,40 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
   top: 0;
-   font-size: 14px;
-   
+  font-size: 36px;
+
 }
 
-.sidebar-right{
-}
-
-.box-wrapper{
+.box-wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.box{
+.box {
   background-color: red;
   width: 10vw;
   height: 200px;
 }
 
-.sidebar > p{
+.sidebar>p {
   text-indent: 0em;
   margin: 0;
   overflow: visible;
   z-index: 0;
   line-height: 1.0;
-   font-size: 14px;
-     text-align:left;
-     hyphens: none;
-
-   
+  font-size: 36px;
+  text-align: left;
+  hyphens: none;
 }
 
-.info-sidebar > div {
+.info-sidebar>div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-  
-  
+
+
+
 }
 
 .logo-circle {
@@ -104,7 +99,7 @@ a {
   top: 0px;
   left: 0px;
   position: sticky;
-  background-image: url("/src/shockpazzesco-27.svg");
+  background-image: url("/src/ROLEX26.gif");
   background-color: #00000000;
   mix-blend-mode: difference;
   background-size: contain;
@@ -112,7 +107,7 @@ a {
   pointer-events: none;
 }
 
-.hello-main{
+.hello-main {
   z-index: -1;
 }
 
@@ -123,8 +118,8 @@ a {
   overflow-y: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-   font-size: 14px;
-   
+  font-size: 14px;
+
 }
 
 .top-nav {
@@ -133,12 +128,13 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-    mix-blend-mode: difference;
+  mix-blend-mode: difference;
 
 }
-  .project-section {
-    margin-bottom: 20px;
-  }
+
+.project-section {
+  margin-bottom: 20px;
+}
 
 .project-thumbnails {
   display: flex;
@@ -166,7 +162,7 @@ a {
 .thumbnail {
   width: 25px;
   height: 25px;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -193,8 +189,8 @@ a {
 
 .carousel-slide {
   min-width: 100%;
-  height: 500px;
-  background-size:cover;
+  height: 600px;
+  background-size: cover;
   background-position: center;
   z-index: 2;
 }
@@ -208,7 +204,7 @@ a {
 }
 
 .nav-btn {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   width: 40px;
   height: 40px;
@@ -239,14 +235,14 @@ a {
 .project-description {
   line-height: 1.0;
   hyphens: auto;
-    font-size: 14px;
+  font-size: 14px;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   overflow-wrap: break-word;
   word-break: normal;
   color: #7a7a7a;
   text-align: justify;
-  
+
 }
 
 .image-scroll-container {
@@ -336,15 +332,16 @@ a {
     scrollbar-width: none;
   }
 
-  .nav-sidebar > div {
+  .nav-sidebar>div {
     order: 1;
   }
-  .nav-sidebar > a {
+
+  .nav-sidebar>a {
     order: 0;
   }
 
   .nav-sidebar {
-   
+
     position: fixed;
     top: 0;
     left: 0;
@@ -356,7 +353,7 @@ a {
     margin: 10vh 0 20px 0;
   }
 
-  .top-nav{
+  .top-nav {
     display: none;
     position: fixed;
     /* width: 91%; */
@@ -365,20 +362,20 @@ a {
     width: 100%;
     /* transform: translateX(5%); */
   }
-  
+
   .sidebar {
     -ms-overflow-style: none;
     scrollbar-width: none;
     position: relative;
     height: auto;
   }
-  
+
   .main-content {
     -ms-overflow-style: none;
     scrollbar-width: none;
     height: auto;
   }
-  
+
   .project-section {
     padding: 20px 0;
     min-height: auto;
@@ -389,18 +386,17 @@ a {
   .scroll-image {
     height: 250px;
   }
-  
+
   .carousel-slide {
-    height: 250px;
+    height: 500px;
   }
-  
+
   .project-thumbnails {
     flex-wrap: wrap;
   }
-  
+
   .thumbnail {
     width: 30px;
     height: 30px;
   }
 }
-  
