@@ -14,8 +14,8 @@
             <span class="nav-text">SPACE BOX</span>
         </div>
         <div class="nav-row">
-            <span class="nav-text">Roma 14:01PM</span>
-            <span class="nav-text">v2.0.1</span>
+            <span class="nav-text" id="romaTime"></span>
+            <span class="nav-text">v2.1.0</span>
         </div>
     </header>
 
@@ -157,6 +157,24 @@
                 el.style.backgroundPosition = 'center';
             }
         });
+
+        function updateTime() {
+        const options = {
+            timeZone: "Europe/Rome",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        };
+
+        const formatter = new Intl.DateTimeFormat("en-US", options);
+        const timeString = formatter.format(new Date());
+
+        document.getElementById("romaTime").textContent = "Roma " + timeString;
+        }
+
+        setInterval(updateTime, 1000); // 1s -- TODO: idk maybe to 60s - for 4G slow thing
+        updateTime();
+        
     </script>
 
 </body>
