@@ -1,391 +1,256 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
-  color: #ffffff;
-  cursor: crosshair;
-  scroll-behavior: smooth;
-
-}
-
-@font-face {
-  font-family: 'RegestoGrotesk';
-  src: url('fonts/RegestoGrotesk-Medium.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'RegestoGrotesk', sans-serif;
-}
-
-body {
-    /* overflow: hidden; */
-    z-index: 0;
-    background-color: #000000;
-}
-
-.long-text{
-  color: #7a7a7a;
-}
-
-a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0;
-}
-
-
-.spacer {
-  height: 100vh;
-}
-
-.nav-sidebar{
-  position: sticky;
-  height: max-content;
-  top: 0;
-  mix-blend-mode: difference;
-   font-size: 14px;
-}
-
-.sidebar {
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-right: 1px solid #000000;
-  position: sticky;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  top: 0;
-   font-size: 14px;
-   
-}
-
-.sidebar > p{
-  text-indent: 0em;
-  margin: 0;
-  overflow: visible;
-  z-index: 0;
-  line-height: 1.0;
-   font-size: 14px;
-     text-align:left;
-     hyphens: none;
-
-   
-}
-
-.info-sidebar > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
-  
-  
-}
-
-.logo-circle {
-  width: 100%;
-  background-position: top center;
-  aspect-ratio: 1 / 1;
-  margin: 40px 0 40px 0;
-  z-index: 0;
-  top: 0px;
-  left: 0px;
-  position: sticky;
-  background-image: url("/src/shockpazzesco-27.svg");
-  background-color: #00000000;
-  mix-blend-mode: difference;
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-.hello-main{
-  z-index: -1;
-}
-
-.main-content {
-  text-align: justify;
-  height: 100vh;
-  z-index: 1;
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-   font-size: 14px;
-   
-}
-
-.top-nav {
-  background: rgba(255, 255, 255, 0);
-  align-items: flex-start;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-    mix-blend-mode: difference;
-
-}
-  .project-section {
-    margin-bottom: 20px;
-  }
-
-.project-thumbnails {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.scroll-thumbnails {
-  overflow-x: auto;
-  overflow-y: hidden;
-  cursor: crosshair;
-  user-select: none;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.scroll-thumbnails::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-thumbnails:active {
-  cursor: grabbing;
-}
-
-.thumbnail {
-  width: 25px;
-  height: 25px;
-  background-size:cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.thumbnail:hover {
-  border-color: #ffffff;
-}
-
-.image-carousel {
-  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background-color: #2a2a2a;
+  color: #999;
   overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 0px;
 }
 
-.carousel-container {
+/* ===== TOP HEADER BAR ===== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 5vh;
   display: flex;
-  transition: transform 0.3s ease;
-  touch-action: pan-x;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  height: 500px;
-  background-size:cover;
-  background-position: center;
-  z-index: 2;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.nav-btn {
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: 14px;
+  padding: 0 2vw;
+  font-size: 0.75vw;
+  z-index: 1000;
+  border-bottom: 1px solid #ff0000;
 }
 
-.nav-btn:hover {
-  background: white;
-}
-
-.project-info h3 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  font-weight: normal;
-}
-
-.project-type {
-  width: max-content;
-}
-
-
-
-.project-description {
-  line-height: 1.0;
-  hyphens: auto;
-    font-size: 14px;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  overflow-wrap: break-word;
-  word-break: normal;
-  color: #7a7a7a;
-  text-align: justify;
-  
-}
-
-.image-scroll-container {
+.top-bar-left,
+.top-bar-center,
+.top-bar-right {
   display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  gap: 2vw;
 }
 
-.image-scroll-container::-webkit-scrollbar {
-  display: none;
+/* ===== MAIN CONTAINER - 3 COLUMN GRID ===== */
+.main-container {
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 33.33vw 33.33vw 33.34vw;
 }
 
-.scroll-image {
-  flex: 0 0 auto;
-  height: 400px;
-  scroll-snap-align: start;
-  border-radius: 8px;
-  object-fit: cover;
+/* ===== COLUMN 1 - SIDEBAR (FIXED) ===== */
+.sidebar {
+  grid-column: 1;
+  height: 100%;
+  background-color: #2a2a2a;
+  padding: 3vh 2vw;
+  overflow-y: auto;
+  border-right: 1px solid #4a4a4a;
+  position: sticky;
+  top: 0;
 }
 
-.image-scroll-container {
+.sidebar h1 {
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: #ccc;
+  margin-bottom: 1vh;
+}
+
+.sidebar h2 {
+  font-size: 1vw;
+  font-weight: 400;
+  color: #999;
+  margin-bottom: 4vh;
+}
+
+.sidebar h3 {
+  font-size: 0.9vw;
+  font-weight: 400;
+  color: #999;
+  margin-bottom: 1vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: 3vh;
+}
+
+.sidebar li {
+  font-size: 0.85vw;
+  color: #777;
+  margin-bottom: 0.5vh;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar li:hover {
+  color: #ccc;
+}
+
+/* ===== COLUMN 2 - MIDDLE (SCROLLABLE) ===== */
+.middle-column {
+  grid-column: 2;
+  height: 100%;
+  overflow-y: auto;
+  padding: 3vh 2vw;
+  border-right: 1px solid #4a4a4a;
+}
+
+/* ===== COLUMN 3 - RIGHT (SCROLLABLE) ===== */
+.right-column {
+  grid-column: 3;
+  height: 100%;
+  overflow-y: auto;
+  padding: 3vh 2vw;
+}
+
+/* ===== PROJECT CARD STYLES ===== */
+.project-card {
+  margin-bottom: 4vh;
+}
+
+.project-card h2 {
+  font-size: 1.8vw;
+  font-weight: 300;
+  color: #999;
+  line-height: 1.3;
+  margin-bottom: 2vh;
+}
+
+.project-card .expand-btn {
+  font-size: 0.75vw;
+  color: #777;
+  cursor: pointer;
+  margin-bottom: 2vh;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.project-card .expand-btn:hover {
+  color: #ccc;
+}
+
+.project-card p {
+  font-size: 0.85vw;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 2vh;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #e5e5e5;
+  margin-bottom: 1vh;
+}
+
+.project-meta {
+  font-size: 0.7vw;
+  color: #666;
   display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 1rem;
+  justify-content: space-between;
 }
 
-.image-scroll-container::-webkit-scrollbar {
-  display: none;
+/* ===== BOTTOM FOOTER BAR ===== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 5vh;
+  background-color: #3a3a3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+  font-size: 0.75vw;
+  z-index: 1000;
+  border-top: 1px solid #4a4a4a;
 }
 
-.scroll-image {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  max-height: 300px;
-  border-radius: 0.5rem;
-  cursor: grab;
-  user-select: none;
+/* ===== SCROLLBAR STYLING ===== */
+.middle-column::-webkit-scrollbar,
+.right-column::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+  width: 0.4vw;
 }
 
-.image-scroll-container.dragging {
-  cursor: grabbing;
+.middle-column::-webkit-scrollbar-track,
+.right-column::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track {
+  background: #2a2a2a;
 }
 
-
-
-.arrow-down-right {
-  width: 24px;
-  height: 24px;
-  background-image: url('/src/arrow-down-right.svg');
-  background-size: contain;
+.middle-column::-webkit-scrollbar-thumb,
+.right-column::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 1vw;
 }
 
-.arrow-left {
-  width: 18px;
-  height: 18px;
-  background-image: url('/src/arrow-left.svg');
-  background-size: contain;
-}
-
-.arrow-right {
-  width: 18px;
-  height: 18px;
-  background-image: url('/src/arrow-right.svg');
-  background-size: contain;
-}
-
-.arrow-top-right {
-  width: 24px;
-  height: 24px;
-  background-image: url('/src/arrow-top.svg');
-  background-size: contain;
-}
-
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
-
-  body {
-    color: #ffffff;
-    cursor: crosshair;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .top-bar,
+  .bottom-bar {
+    font-size: 2.5vw;
+    height: 6vh;
   }
 
-  .nav-sidebar > div {
-    order: 1;
-  }
-  .nav-sidebar > a {
-    order: 0;
-  }
-
-  .nav-sidebar {
-   
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    /* width: 91%; */
+  .main-container {
+    top: 6vh;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
   }
 
-  .logo-circle {
-    margin: 10vh 0 20px 0;
-  }
-
-  .top-nav{
-    display: none;
-    position: fixed;
-    /* width: 91%; */
-    top: 15vw;
-    left: 0;
-    width: 100%;
-    /* transform: translateX(5%); */
-  }
-  
   .sidebar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    position: relative;
+    width: 100vw;
     height: auto;
-  }
-  
-  .main-content {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    height: auto;
-  }
-  
-  .project-section {
-    padding: 20px 0;
-    min-height: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    max-height: 30vh;
+    border-right: none;
+    border-bottom: 1px solid #4a4a4a;
   }
 
-  .scroll-image {
-    height: 250px;
+  .sidebar h1 {
+    font-size: 4vw;
   }
-  
-  .carousel-slide {
-    height: 250px;
+
+  .sidebar h2,
+  .sidebar h3 {
+    font-size: 3vw;
   }
-  
-  .project-thumbnails {
-    flex-wrap: wrap;
+
+  .sidebar li {
+    font-size: 2.8vw;
   }
-  
-  .thumbnail {
-    width: 30px;
-    height: 30px;
+
+  .middle-column,
+  .right-column {
+    width: 100vw;
+    border-right: none;
+    border-bottom: 1px solid #4a4a4a;
+    overflow-y: visible;
+    height: auto;
+  }
+
+  .project-card h2 {
+    font-size: 5vw;
+  }
+
+  .project-card p {
+    font-size: 3.5vw;
+  }
+
+  .project-meta {
+    font-size: 2.5vw;
   }
 }
-  
