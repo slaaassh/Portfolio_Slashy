@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Space Box V.2.0</title>
+    <link href="version2.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-nav">
+        <div class="nav-row">
+            <span class="nav-text">Matteo Batocchi</span>
+            <span class="nav-text">SPACE BOX</span>
+        </div>
+        <div class="nav-row">
+            <span class="nav-text" id="romaTime"></span>
+            <span class="nav-text">v2.1.0</span>
+        </div>
+    </header>
+
+    <div class="description">
+        <p>We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
+    </div>
+
+    <section class="project-section">
+        <div class="section-row">
+            <div class="section-left">
+                <div class="project-info">
+                    <p class="project-title">Vision Club</p>
+                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
+                </div>
+                <div class="expanded-header">
+                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
+                    <p class="expanded-title">Vision Club</p>
+                </div>
+            </div>
+            <div class="project-thumb-col">
+                <div class="thumb-meta">
+                    <span class="thumb-date">23.05.25</span>
+                    <span class="thumb-type">vid.1</span>
+                </div>
+                <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
+                <button class="toggle-btn">Expand</button>
+            </div>
+        </div>
+        <div class="media-grid">
+            <div class="media-cell span-2"><span class="cell-date">23.05.25</span><div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="section-row">
+            <div class="section-left">
+                <div class="project-info">
+                    <p class="project-title">Vision Club</p>
+                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
+                </div>
+                <div class="expanded-header">
+                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
+                    <p class="expanded-title">Vision Club</p>
+                </div>
+            </div>
+            <div class="project-thumb-col">
+                <div class="thumb-meta">
+                    <span class="thumb-date">23.05.25</span>
+                    <span class="thumb-type">vid.1</span>
+                </div>
+                <div class="thumb-preview"></div>
+                <button class="toggle-btn">Expand</button>
+            </div>
+        </div>
+        <div class="media-grid">
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+        </div>
+    </section>
+
+    <section class="project-section">
+        <div class="section-row">
+            <div class="section-left">
+                <div class="project-info">
+                    <p class="project-title">Vision Club</p>
+                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
+                </div>
+                <div class="expanded-header">
+                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
+                    <p class="expanded-title">Vision Club</p>
+                </div>
+            </div>
+            <div class="project-thumb-col">
+                <div class="thumb-meta">
+                    <span class="thumb-date">23.05.25</span>
+                    <span class="thumb-type">vid.1</span>
+                </div>
+                <div class="thumb-preview"></div>
+                <button class="toggle-btn">Expand</button>
+            </div>
+        </div>
+        <div class="media-grid">
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell span-2"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell span-2"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+            <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
+        </div>
+    </section>
+
+    <!-- TODO: transform this in separate .js -->
+    <script>
+        document.querySelectorAll('.project-section').forEach(section => {
+            const projectInfo = section.querySelector('.project-info');
+            const expandedHeader = section.querySelector('.expanded-header');
+            const mediaGrid = section.querySelector('.media-grid');
+            const btn = section.querySelector('.toggle-btn');
+
+            btn.addEventListener('click', () => {
+                const opening = mediaGrid.style.display !== 'grid';
+
+                if (opening) {
+                    mediaGrid.style.display = 'grid';
+                    projectInfo.style.display = 'none';
+                    expandedHeader.style.display = 'block';
+                    btn.textContent = 'Riduci';
+                } else {
+                    mediaGrid.style.display = 'none';
+                    projectInfo.style.display = 'block';
+                    expandedHeader.style.display = 'none';
+                    btn.textContent = 'Expand';
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-src]').forEach(el => {
+            const src = el.getAttribute('data-src');
+            if (!src) return;
+            const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+            if (isVideo) {
+                const video = document.createElement('video');
+                video.src = src;
+                video.autoplay = true;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
+                el.appendChild(video);
+            } else {
+                el.style.backgroundImage = `url('${src}')`;
+                el.style.backgroundSize = 'cover';
+                el.style.backgroundPosition = 'center';
+            }
+        });
+
+        function updateTime() {
+        const options = {
+            timeZone: "Europe/Rome",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        };
+
+        const formatter = new Intl.DateTimeFormat("en-US", options);
+        const timeString = formatter.format(new Date());
+
+        document.getElementById("romaTime").textContent = "Roma " + timeString;
+        }
+
+        setInterval(updateTime, 1000); // 1s -- TODO: idk maybe to 60s - for 4G slow thing
+        updateTime();
+        
+    </script>
+
+</body>
+</html>
