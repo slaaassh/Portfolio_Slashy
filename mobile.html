@@ -26,23 +26,24 @@
     <section class="project-section">
         <div class="section-row">
             <div class="section-left">
-                <div class="project-info">
-                    <p class="project-title">Vision Club</p>
-                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
-                </div>
-                <div class="expanded-header">
-                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
-                    <p class="expanded-title">Vision Club</p>
+                <div class="marquee-wrap">
+                    <div class="marquee-track">
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                    </div>
                 </div>
             </div>
             <div class="project-thumb-col">
-                <div class="thumb-meta">
-                    <span class="thumb-date">23.05.25</span>
-                    <span class="thumb-type">vid.1</span>
-                </div>
+                <button class="toggle-btn">+</button>
                 <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
-                <button class="toggle-btn">Expand</button>
             </div>
+        </div>
+        <div class="thumb-meta">
+            <span class="thumb-date">23.05.25</span>
+            <span class="thumb-work">Art Direction</span>
+            <span class="thumb-studio">w/ Studio Natale</span>
         </div>
         <div class="media-grid">
             <div class="media-cell span-2"><span class="cell-date">23.05.25</span><div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div></div>
@@ -56,23 +57,24 @@
     <section class="project-section">
         <div class="section-row">
             <div class="section-left">
-                <div class="project-info">
-                    <p class="project-title">Vision Club</p>
-                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
-                </div>
-                <div class="expanded-header">
-                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
-                    <p class="expanded-title">Vision Club</p>
+                <div class="marquee-wrap">
+                    <div class="marquee-track">
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                    </div>
                 </div>
             </div>
             <div class="project-thumb-col">
-                <div class="thumb-meta">
-                    <span class="thumb-date">23.05.25</span>
-                    <span class="thumb-type">vid.1</span>
-                </div>
+                <button class="toggle-btn">+</button>
                 <div class="thumb-preview"></div>
-                <button class="toggle-btn">Expand</button>
             </div>
+        </div>
+        <div class="thumb-meta">
+            <span class="thumb-date">23.05.25</span>
+            <span class="thumb-work">Art Direction</span>
+            <span class="thumb-studio">w/ Studio Natale</span>
         </div>
         <div class="media-grid">
             <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
@@ -87,23 +89,24 @@
     <section class="project-section">
         <div class="section-row">
             <div class="section-left">
-                <div class="project-info">
-                    <p class="project-title">Vision Club</p>
-                    <p class="project-sub">w/ Studio Natale<br>Art Direction<br>May - July<br>2025</p>
-                </div>
-                <div class="expanded-header">
-                    <p class="expanded-description">We offer design and communication consultancy for clients from all fields of interest with a focus on research and the creation of original projects</p>
-                    <p class="expanded-title">Vision Club</p>
+                <div class="marquee-wrap">
+                    <div class="marquee-track">
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                        <span>Vision Club</span>
+                    </div>
                 </div>
             </div>
             <div class="project-thumb-col">
-                <div class="thumb-meta">
-                    <span class="thumb-date">23.05.25</span>
-                    <span class="thumb-type">vid.1</span>
-                </div>
+                <button class="toggle-btn">+</button>
                 <div class="thumb-preview"></div>
-                <button class="toggle-btn">Expand</button>
             </div>
+        </div>
+        <div class="thumb-meta">
+            <span class="thumb-date">23.05.25</span>
+            <span class="thumb-work">Art Direction</span>
+            <span class="thumb-studio">w/ Studio Natale</span>
         </div>
         <div class="media-grid">
             <div class="media-cell"><span class="cell-date">23.05.25</span><div class="cell-thumb"></div></div>
@@ -113,29 +116,20 @@
         </div>
     </section>
 
-    <!-- TODO: transform this in separate .js -->
     <script>
         document.querySelectorAll('.project-section').forEach(section => {
-            const projectInfo = section.querySelector('.project-info');
-            const expandedHeader = section.querySelector('.expanded-header');
             const mediaGrid = section.querySelector('.media-grid');
             const btn = section.querySelector('.toggle-btn');
+            const thumb = section.querySelector('.thumb-preview');
 
-            btn.addEventListener('click', () => {
+            function toggle() {
                 const opening = mediaGrid.style.display !== 'grid';
+                mediaGrid.style.display = opening ? 'grid' : 'none';
+                btn.textContent = opening ? '-' : '+';
+            }
 
-                if (opening) {
-                    mediaGrid.style.display = 'grid';
-                    projectInfo.style.display = 'none';
-                    expandedHeader.style.display = 'block';
-                    btn.textContent = 'Riduci';
-                } else {
-                    mediaGrid.style.display = 'none';
-                    projectInfo.style.display = 'block';
-                    expandedHeader.style.display = 'none';
-                    btn.textContent = 'Expand';
-                }
-            });
+            btn.addEventListener('click', toggle);
+            thumb.addEventListener('click', toggle);
         });
 
         document.querySelectorAll('[data-src]').forEach(el => {
@@ -159,22 +153,11 @@
         });
 
         function updateTime() {
-        const options = {
-            timeZone: "Europe/Rome",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true
-        };
-
-        const formatter = new Intl.DateTimeFormat("en-US", options);
-        const timeString = formatter.format(new Date());
-
-        document.getElementById("romaTime").textContent = "Roma " + timeString;
+            const options = { timeZone: "Europe/Rome", hour: "2-digit", minute: "2-digit", hour12: true };
+            document.getElementById("romaTime").textContent = "Roma " + new Intl.DateTimeFormat("en-US", options).format(new Date());
         }
-
-        setInterval(updateTime, 1000); // 1s -- TODO: idk maybe to 60s - for 4G slow thing
+        setInterval(updateTime, 1000);
         updateTime();
-        
     </script>
 
 </body>
