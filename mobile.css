@@ -12,6 +12,7 @@
     --gap: 0.8rem;
     --pad: 2.5vw;
     --font: 'Helvetica Bold', 'Courier New', Courier, monospace;
+    --thumb-size: 28vw;
 }
 
 html, body {
@@ -29,7 +30,6 @@ html, body {
     padding: var(--pad);
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .nav-row {
@@ -39,7 +39,6 @@ html, body {
 }
 
 .nav-text {
-    font-family: var(--font);
     color: var(--text);
     line-height: 1.4;
 }
@@ -47,10 +46,6 @@ html, body {
 /* ── DESCRIPTION ── */
 .description {
     padding: 0 var(--pad) 4vw var(--pad);
-}
-
-.description p {
-    font-family: var(--font);
     color: var(--text);
     line-height: 1.4;
 }
@@ -60,42 +55,73 @@ html, body {
     margin-bottom: 4vw;
 }
 
+.section-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 3vw var(--pad) 0.4em var(--pad);
+    gap: 2vw;
+}
+
+.thumb-work,
+.thumb-studio,
+.thumb-date {
+    font-size: clamp(9px, 2.5vw, 12px);
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+.thumb-work {
+    flex: 1;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: clamp(9px, 2.5vw, 12px);
+    color: var(--text);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.toggle-btn:hover { opacity: 0.6; }
+
 .section-row {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
-    padding: 3vw var(--pad) 0 var(--pad);
+    padding: 0 var(--pad);
 }
 
-/* ── SECTION LEFT — marquee only ── */
 .section-left {
     flex: 1;
     overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    padding-right: 0;
-    /* no extra margin — flush against thumb-preview */
 }
 
 .marquee-wrap {
     width: 100%;
+    height: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .marquee-track {
     display: flex;
-    gap: 4vw;
+    gap: 0.15em;
     white-space: nowrap;
-    animation: marquee 8s linear infinite;
+    font-size: var(--thumb-size);
+    line-height: 1;
+    animation: marquee 25s linear infinite;
+    will-change: transform;
 }
 
 .marquee-track span {
-    font-size: clamp(18px, 5.5vw, 28px);
     font-weight: 400;
-    font-family: var(--font);
     color: var(--text);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     flex-shrink: 0;
 }
 
@@ -106,31 +132,10 @@ html, body {
 
 /* ── THUMB COLUMN ── */
 .project-thumb-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    width: 28vw;
+    width: var(--thumb-size);
     min-width: 80px;
     max-width: 160px;
     flex-shrink: 0;
-}
-
-/* toggle-btn sits at top of thumb col, replacing thumb-type */
-.toggle-btn {
-    background: none;
-    border: none;
-    font-family: var(--font);
-    font-size: clamp(9px, 2.5vw, 12px);
-    color: var(--text);
-    cursor: pointer;
-    padding: 0 0 0.4em 0;
-    align-self: flex-end;
-    letter-spacing: 0.02em;
-    line-height: 1;
-}
-
-.toggle-btn:hover {
-    opacity: 0.6;
 }
 
 .thumb-preview {
@@ -138,39 +143,16 @@ html, body {
     aspect-ratio: 1 / 1;
     background-color: var(--thumb);
     cursor: pointer;
+    display: block;
 }
 
-.thumb-preview:hover {
-    opacity: 0.85;
-}
-
-/* ── THUMB META — full width, outside thumb col ── */
-.thumb-meta {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0.4em var(--pad) 0 var(--pad);
-    margin-top: 0.3em;
-}
-
-.thumb-date,
-.thumb-work,
-.thumb-studio {
-    font-size: 12px;
-    font-family: var(--font);
-    color: var(--text);
-}
-
-.thumb-work,
-.thumb-studio {
-    color: var(--text-dim);
-}
+.thumb-preview:hover { opacity: 0.85; }
 
 /* ── MEDIA GRID ── */
 .media-grid {
     display: none;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--gap);
+    gap: 0em var(--gap);
     padding: var(--gap);
     width: 100%;
 }
@@ -178,19 +160,15 @@ html, body {
 .media-cell {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
     grid-column: span 1;
 }
 
-.media-cell.span-2 {
-    grid-column: span 2;
-}
+.media-cell.span-2 { grid-column: span 2; }
 
 .cell-date {
     font-size: clamp(7px, 2vw, 9px);
-    font-family: var(--font);
     color: var(--text);
-    padding: 0.4em 0.5em 0.2em 0.5em;
+    padding: 0em 0.5em 0.2em;
     display: block;
 }
 
@@ -201,5 +179,5 @@ html, body {
 }
 
 .media-cell.span-2 .cell-thumb {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2 / 0.9617;
 }
