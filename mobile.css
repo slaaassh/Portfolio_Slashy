@@ -4,20 +4,26 @@
     padding: 0;
 }
 
+@font-face {
+  font-family: "HelveticaBold";
+  src: url("fonts/Helvetica-Bold.ttf");
+  font-weight: bold;
+}
+
 :root {
-    --bg: #2a2a2a;
+    --bg: linear-gradient(0deg, #E4EEF7 0%, #7686A8 18%, #5C6E86 24%, #415564 32%, #37444F 40%, #1C1819 62%);
     --text: #c8c8c8;
     --text-dim: #888;
     --thumb: #b0b0b0;
     --gap: 0.8rem;
     --pad: 2.5vw;
-    --font: 'Helvetica Bold', 'Courier New', Courier, monospace;
-    --thumb-size: 28vw;
+    --font: 'HelveticaBold', Courier;
+    --col: calc((100vw - 2 * var(--pad) - 2 * var(--gap)) / 3);
 }
 
 html, body {
     width: 100%;
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--text);
     font-family: var(--font);
     font-size: clamp(11px, 3vw, 14px);
@@ -25,7 +31,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* ── NAV ── */
 .top-nav {
     padding: var(--pad);
     display: flex;
@@ -43,7 +48,6 @@ html, body {
     line-height: 1.4;
 }
 
-/* ── DESCRIPTION ── */
 .description {
     padding: 0 var(--pad) 4vw var(--pad);
     color: var(--text);
@@ -52,27 +56,43 @@ html, body {
 
 /* ── PROJECT SECTION ── */
 .project-section {
-    margin-bottom: 4vw;
+    
 }
+
 
 .section-meta {
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
+    gap: var(--gap);
+    /* padding: 3vw var(--pad) var(--gap) var(--pad); */
+}
+
+.meta-left {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 3vw var(--pad) 0.4em var(--pad);
-    gap: 2vw;
+    margin-right: var(--gap);
+}
+
+.meta-right {
+    width: var(--col);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .thumb-work,
 .thumb-studio,
 .thumb-date {
-    font-size: clamp(9px, 2.5vw, 12px);
+    font-size: clamp(7px, 2vw, 9px);
     color: var(--text-dim);
     white-space: nowrap;
 }
 
-.thumb-work {
-    flex: 1;
+.thumb-date {
+    color: black;
 }
 
 .toggle-btn {
@@ -93,7 +113,10 @@ html, body {
     display: flex;
     align-items: stretch;
     padding: 0 var(--pad);
+    cursor: pointer;
 }
+
+.section-row:hover .thumb-preview { opacity: 0.85; }
 
 .section-left {
     flex: 1;
@@ -104,6 +127,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -112,7 +136,7 @@ html, body {
     display: flex;
     gap: 0.15em;
     white-space: nowrap;
-    font-size: var(--thumb-size);
+    font-size: var(--col);
     line-height: 1;
     animation: marquee 25s linear infinite;
     will-change: transform;
@@ -125,35 +149,57 @@ html, body {
     flex-shrink: 0;
 }
 
+.marquee-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    pointer-events: none;
+    padding:  0 0 var(--gap) 0;
+}
+
+.overlay-title {
+    font-size: clamp(11px, 3vw, 14px);
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+}
+
+.overlay-desc {
+    font-size: clamp(9px, 2.5vw, 12px);
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+
 @keyframes marquee {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* ── THUMB COLUMN ── */
 .project-thumb-col {
-    width: var(--thumb-size);
-    min-width: 80px;
-    max-width: 160px;
+    width: var(--col);
     flex-shrink: 0;
 }
 
 .thumb-preview {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+    width: var(--col);
+    height: var(--col);
     background-color: var(--thumb);
-    cursor: pointer;
     display: block;
+    transition: opacity 0.15s;
 }
 
-.thumb-preview:hover { opacity: 0.85; }
-
-/* ── MEDIA GRID ── */
+/* MEDIA GRID */
 .media-grid {
     display: none;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0em var(--gap);
-    padding: var(--gap);
+    gap: 0px var(--gap);
+    padding: 0px var(--gap) 0px var(--gap);
     width: 100%;
 }
 
@@ -162,22 +208,43 @@ html, body {
     flex-direction: column;
     grid-column: span 1;
 }
-
 .media-cell.span-2 { grid-column: span 2; }
 
 .cell-date {
     font-size: clamp(7px, 2vw, 9px);
-    color: var(--text);
-    padding: 0em 0.5em 0.2em;
-    display: block;
+    color: black;
+    display: flex;
+    align-items: center;
+    line-height: 1;
 }
 
 .cell-thumb {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: var(--col);
     background-color: var(--thumb);
 }
 
-.media-cell.span-2 .cell-thumb {
-    aspect-ratio: 2 / 0.9617;
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--gap) var(--pad) calc(var(--pad) * 2) var(--pad);
+    margin-top: 4vw;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.footer-link {
+    font-size: clamp(9px, 2.5vw, 12px);
+    color: var(--text-dim);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-link:hover { color: var(--text); }
+
+.sfaccim{
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
