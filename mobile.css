@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "HelveticaBold";
-  src: url("fonts/Helvetica-Bold.ttf");
+  font-family: 'HelveticaBold';
+  src: url('./fonts/Helvetica-Bold.ttf') format('truetype');
   font-weight: bold;
 }
 
@@ -17,7 +17,7 @@
     --thumb: #b0b0b0;
     --gap: 0.8rem;
     --pad: 2.5vw;
-    --font: 'HelveticaBold', Courier;
+    --font: 'HelveticaBold', 'Comic Sans';
     --col: calc((100vw - 2 * var(--pad) - 2 * var(--gap)) / 3);
 }
 

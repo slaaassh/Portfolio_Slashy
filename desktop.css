@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'HelveticaBold';
+  src: url('./fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +16,7 @@
     --text-hover: #fff;
     --thumb: #b0b0b0;
     --gap: 0.8rem;
-    --font: 'Courier New', Courier, monospace;
+    --font: 'HelveticaBold','Arial', Courier, monospace;
     --sidebar-width: 16vw;
 }
 
