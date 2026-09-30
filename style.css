@@ -13,163 +13,91 @@
 :root {
     --bg: #ffffff;
     --text: #ffffff;
-
     --gap: 0.8vw;
     --pad: 0.3vw;
     --font-size: 2vw;
     --font: 'HelveticaBold', 'Comic Sans';
-
-    /*
-       Desktop:
-       cover destra circa 22% viewport
-    */
-    --col: 22vw;
+    --col: 22vw; /* right cover ~22% of viewport */
 }
 
-
-/* ─────────────────────────
-   BASE
-───────────────────────── */
-
+/* BASE */
 html,
 body {
     width: 100%;
-
     background: var(--bg);
-
     color: var(--text);
-
     font-family: var(--font);
-
     font-size: clamp(10px, 0.75vw, 14px);
-
     line-height: 1.35;
-
     overflow-x: hidden;
 }
 
-
-/* ─────────────────────────
-   HEADER
-───────────────────────── */
-
+/* HEADER */
 .top-nav {
     padding: 0 1vh 0 0;
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 100;
-
     mix-blend-mode: difference;
 }
 
-
 .nav-row {
     display: flex;
-
     align-items: baseline;
-
     position: relative;
-
     width: 100%;
 }
-
 
 .nav-logo {
     margin-right: auto;
 }
 
-
 #romaTime {
     position: absolute;
-
-    /*
-      allineamento circa con
-      w/ Studio Natale
-    */
-
-    right: calc(
-        var(--col)
-        + var(--gap)
-        - 12px
-    );
+    right: calc(var(--col) + var(--gap) - 12px);
 }
-
 
 .voyager-pos {
     margin-left: auto;
-
     text-align: right;
-
     white-space: nowrap;
-
     font-variant-numeric: tabular-nums;
 }
 
-
 .nav-text {
     color: var(--text);
-
     line-height: 1.4;
 }
 
-
-/* ─────────────────────────
-   DESCRIPTION
-───────────────────────── */
-
+/* DESCRIPTION */
 .description {
     padding: 5vh 0 13vh 0;
-
-    /*
-      spazio sotto header fisso
-    */
-
     font-size: var(--font-size);
-
     color: #7d7e7f;
-
     line-height: 1.10;
     letter-spacing: -0.03em;
-
     max-width: 60vw;
 }
 
-
-/* ─────────────────────────
-   PROJECT SECTION
-───────────────────────── */
-
+/* PROJECT SECTION */
 .project-section {
     width: 100%;
 }
 
-
 .section-row {
     display: flex;
-
     align-items: stretch;
-
     width: 100%;
-
     cursor: pointer;
 }
-
 
 .section-row:hover .thumb-preview {
     opacity: 0.85;
 }
 
-
-/* ─────────────────────────
-   LEFT SIDE
-───────────────────────── */
-
+/* LEFT SIDE */
 .section-left {
     flex: 1;
     min-width: 0;
@@ -180,94 +108,58 @@ body {
     justify-content: flex-end;
 }
 
-
-/* ─────────────────────────
-   META ABOVE TITLE
-───────────────────────── */
-
+/* META ABOVE TITLE */
 .section-meta {
     display: flex;
-
     align-items: flex-end;
-
     gap: var(--gap);
 }
 
-
 .meta-left {
     width: 100%;
-
     display: flex;
-
     justify-content: space-between;
-
     padding-right: var(--gap);
 }
-
 
 .thumb-work,
 .thumb-studio,
 .thumb-date {
     font-size: var(--font-size);
-
     color: #7d7e7f;
-
     white-space: nowrap;
 }
 
-
-/* ─────────────────────────
-   RIGHT COLUMN
-───────────────────────── */
-
+/* RIGHT COLUMN */
 .project-thumb-col {
     width: var(--col);
-
     flex-shrink: 0;
 }
-
 
 .meta-right {
     width: var(--col);
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: baseline;
 }
 
-
 .toggle-btn {
     background: none;
-
     border: none;
-
     font-family: var(--font);
-
     font-size: clamp(10px, 0.7vw, 13px);
-
     color: #7d7e7f;
-
     cursor: pointer;
-
     padding: 0;
-
     line-height: 1;
-
     flex-shrink: 0;
 }
-
 
 .toggle-btn:hover {
     opacity: 0.6;
 }
 
-
-/* ─────────────────────────
-   MARQUEE
-───────────────────────── */
-
+/* MARQUEE */
 .marquee-wrap {
     width: 100%;
     height: var(--col);
@@ -292,11 +184,9 @@ body {
     align-items: stretch;
 }
 
-
 .marquee-track:active {
     cursor: grabbing;
 }
-
 
 .marquee-track > * {
     flex-shrink: 0;
@@ -310,59 +200,40 @@ body {
     line-height: 0.85;
 }
 
-
-/* ─────────────────────────
-   OVERLAY
-───────────────────────── */
-
+/* OVERLAY */
 .marquee-overlay {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
     opacity: 0;
     transition: opacity 0.6s ease;
-
     z-index: 2;
     pointer-events: none;
-
     padding-left: var(--pad);
 }
 
-
 .overlay-title {
     font-size: clamp(10px, 0.75vw, 14px);
-
     color: var(--text);
-
     line-height: 1.2;
-
     margin-bottom: 0.3em;
 }
-
 
 .overlay-desc {
     width: 60vw;
     max-width: 800px;
     margin-top: 15em;
     margin-left: -0.8em;
-
     font-size: clamp(26px, 0.65vw, 13px);
     line-height: 1.1;
-
     color: #ffffff;
 }
 
-
-/* ─────────────────────────
-   PROJECT COVER
-───────────────────────── */
-
+/* PROJECT COVER */
 .thumb-preview {
-    width:23vw;
+    width: 23vw;
     height: 18vw;
     display: block;
     background-color: var(--thumb);
@@ -372,109 +243,65 @@ body {
     transition: opacity 0.15s;
 }
 
-
-/* ─────────────────────────
-   MEDIA GRID OPEN
-───────────────────────── */
-
+/* MEDIA GRID OPEN */
 .media-grid {
     display: none;
-
     grid-template-columns: repeat(3, 1fr);
-
     column-gap: var(--gap);
-
-    padding:
-        0
-        var(--pad);
-
+    padding: 0 var(--pad);
     width: 100%;
 }
 
-
 .media-cell {
     display: flex;
-
     flex-direction: column;
-
     grid-column: span 1;
 }
-
 
 .media-cell.span-2 {
     grid-column: span 2;
 }
 
-
 .cell-date {
     font-size: clamp(9px, 0.65vw, 12px);
-
     color: #7d7e7f;
-
     display: flex;
-
     align-items: center;
-
     line-height: 2;
 }
-
 
 .cell-thumb {
     width: 100%;
     background-color: #000000;
     aspect-ratio: 1 / 1;
-
     background-size: cover;
-
     background-position: center;
 }
 
-
-/* ─────────────────────────
-   FOOTER
-───────────────────────── */
-
+/* FOOTER */
 .site-footer {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
-
-    padding:
-        4vw
-        var(--pad)
-        var(--pad)
-        var(--pad);
-
+    padding: 4vw var(--pad) var(--pad) var(--pad);
     margin-top: 5vw;
-
     gap: var(--gap);
 }
 
-
 .footer-link {
     font-size: clamp(11px, 0.9vw, 16px);
-
     color: #000000;
-
     text-decoration: none;
-
     white-space: nowrap;
 }
-
 
 .footer-link:hover {
     opacity: 0.5;
 }
 
-
 .sfaccim {
     min-height: 100vh;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 }

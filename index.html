@@ -1,21 +1,467 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <!-- TODO: define structure to indexer & to switcher -->
-<script>
-const isMobile = window.innerWidth <= 768 || 
-                  /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Portfolio Slash</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="sfaccim">
+      <header class="top-nav">
+        <div class="nav-row">
+          <span class="nav-text nav-logo">Matteo Batocchi</span>
+          <span class="nav-text" id="romaTime"></span>
+          <span class="nav-text voyager-pos" id="voyager2">VGR2 — loading</span>
+        </div>
+      </header>
 
-if (isMobile) {
-  window.location.href = 'mobile.html';
-} else {
-  window.location.href = 'desktop.html';
-}
-</script>
-</body>
+      <div class="content">
+        <div class="description">
+          <p>
+            A multidisciplinary practice working across design, art direction and education, with a focus on research, communication and the creation of original projects.
+          </p>
+        </div>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-overlay">
+                  <p class="overlay-desc">
+                    A multidisciplinary practice working across design, art direction and education, with a focus on research, communication and the creation of original projects.
+                  </p>
+                </div>
+                <div class="marquee-track">
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/nav_covers/nav_proj_Tavola disegno 1 copia 2.svg"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-overlay">
+                  <p class="overlay-desc">
+                    A multidisciplinary practice working across design, art direction and education, with a focus on research, communication and the creation of original projects.
+                  </p>
+                </div>
+                <div class="marquee-track">
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                  <span>Vision Club</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/nav_covers/nav_proj_Tavola disegno 1 copia 2.svg"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell span-2">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-track">
+                  <span>Dissonanze</span>
+                  <span>Dissonanze</span>
+                  <span>Dissonanze</span>
+                  <span>Dissonanze</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell span-2">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-overlay">
+                  <p class="overlay-desc">
+                    Brand identity and art direction for a creative studio. Focus on visual language and spatial communication.
+                  </p>
+                </div>
+                <div class="marquee-track">
+                  <span>Fiorano</span>
+                  <span>Fiorano</span>
+                  <span>Fiorano</span>
+                  <span>Fiorano</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell span-2">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-track">
+                  <span>Quantum Type</span>
+                  <span>Quantum Type</span>
+                  <span>Quantum Type</span>
+                  <span>Quantum Type</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell span-2">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="section-row">
+            <div class="section-left">
+              <div class="section-meta">
+                <div class="meta-left">
+                  <span class="thumb-work">Art Direction</span>
+                  <span class="thumb-studio">w/ Studio Natale</span>
+                </div>
+              </div>
+              <div class="marquee-wrap">
+                <div class="marquee-track">
+                  <span>Alchemia Formae</span>
+                  <span>Alchemia Formae</span>
+                  <span>Alchemia Formae</span>
+                  <span>Alchemia Formae</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-thumb-col">
+              <div class="meta-right">
+                <span class="thumb-date">23.05.25</span>
+                <button class="toggle-btn">+</button>
+              </div>
+              <div class="thumb-preview" data-src="./src/project_covers/FARINI/3.png"></div>
+            </div>
+          </div>
+          <div class="media-grid">
+            <div class="media-cell span-2">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/FARINI/farini-04.jpg"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb" data-src="./src/project_covers/Farnese/mockup-4.webm"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+            <div class="media-cell">
+              <span class="cell-date">23.05.25</span>
+              <div class="cell-thumb"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="site-footer">
+        <a href="https://instagram.com/matteo.batocchi" target="_blank" class="footer-link">IG</a>
+        <a href="https://it.linkedin.com/in/matteo-batocchi-95894422b" target="_blank" class="footer-link">LK</a>
+        <a href="mailto:batocchim@gmail.com" class="footer-link">MAIL</a>
+      </footer>
+    </div>
+
+    <script>
+      document.querySelectorAll(".project-section").forEach((section) => {
+        const mediaGrid = section.querySelector(".media-grid");
+        const btn = section.querySelector(".toggle-btn");
+        const sectionRow = section.querySelector(".section-row");
+
+        function toggle() {
+          const opening = mediaGrid.style.display !== "grid";
+          mediaGrid.style.display = opening ? "grid" : "none";
+          btn.textContent = opening ? "-" : "+";
+          const track = section.querySelector(".marquee-track");
+          const overlay = section.querySelector(".marquee-overlay");
+          track.style.opacity = opening ? "0.1" : "1";
+          track.style.transition = "opacity 1.2s ease";
+          if (overlay) overlay.style.opacity = opening ? "1" : "0";
+        }
+
+        sectionRow.addEventListener("click", toggle);
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          toggle();
+        });
+      });
+
+      document.querySelectorAll("[data-src]").forEach((el) => {
+        const src = el.getAttribute("data-src");
+        if (!src) return;
+        const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+        if (isVideo) {
+          const video = document.createElement("video");
+          video.src = src;
+          video.autoplay = true;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.style.cssText = "width:100%;height:100%;object-fit:cover;display:block;";
+          el.appendChild(video);
+        } else {
+          el.style.backgroundImage = `url('${src}')`;
+          el.style.backgroundSize = "cover";
+          el.style.backgroundPosition = "center";
+        }
+      });
+
+      function updateTime() {
+        const options = {
+          timeZone: "Europe/Rome",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        };
+        document.getElementById("romaTime").textContent =
+          "Roma " + new Intl.DateTimeFormat("en-US", options).format(new Date());
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
+
+      const marquees = document.querySelectorAll(".marquee-track");
+      const SPEED = 35; // pixels per second
+
+      marquees.forEach((track) => {
+        let position = 0;
+        let dragging = false;
+        let startX = 0;
+        let startPosition = 0;
+        let lastTime = performance.now();
+
+        function getLoopWidth() {
+          return track.scrollWidth / 2;
+        }
+
+        function normalizePosition() {
+          const loopWidth = getLoopWidth();
+          if (!loopWidth) return;
+          while (position <= -loopWidth) position += loopWidth;
+          while (position > 0) position -= loopWidth;
+        }
+
+        function animate(time) {
+          const delta = (time - lastTime) / 1000;
+          lastTime = time;
+          if (!dragging) {
+            position -= SPEED * delta;
+            normalizePosition();
+            track.style.transform = `translate3d(${position}px, 0, 0)`;
+          }
+          requestAnimationFrame(animate);
+        }
+
+        track.addEventListener("pointerdown", (e) => {
+          dragging = true;
+          startX = e.clientX;
+          startPosition = position;
+          track.setPointerCapture(e.pointerId);
+        });
+
+        track.addEventListener("pointermove", (e) => {
+          if (!dragging) return;
+          position = startPosition + (e.clientX - startX);
+          normalizePosition();
+          track.style.transform = `translate3d(${position}px, 0, 0)`;
+        });
+
+        track.addEventListener("pointerup", (e) => {
+          dragging = false;
+          if (track.hasPointerCapture(e.pointerId)) {
+            track.releasePointerCapture(e.pointerId);
+          }
+        });
+
+        track.addEventListener("pointercancel", () => {
+          dragging = false;
+        });
+
+        requestAnimationFrame(animate);
+      });
+    </script>
+  </body>
 </html>
